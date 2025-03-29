@@ -1,48 +1,78 @@
-# PLUTO
+                        PLUTO version 4.4-patch1
+                     ------------------------
+                 Copyright (C) 2002-2021 Andrea Mignone
 
-PLUTO is a computational code for solving multi-dimensional Ideal and Resistive Magnetohydrodynamics (MHD) equations, specifically designed for solar physics applications. This code is particularly useful for studying phenomena such as the Solar Dynamo, differential rotation, meridional flow, and the Tachocline.
+PLUTO is Godunov-type code for astrophysical fluid dynamics supporting several
+modules and algorithms. This is the v 4.3 (June 2018) version of the code
+(http://plutocode.ph.unito.it).
 
-## Features
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation.
 
-- Multi-dimensional MHD simulations
-- Support for both Ideal and Resistive MHD
-- High-performance computing capabilities
-- MPI and OpenMP parallelization
-- Fortran 90 implementation
-- Python integration for data visualization and analysis
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
 
-## Directory Structure
+# Main Developer
 
-- `Src/`: Source code files
-- `Lib/`: Library files
-- `Config/`: Configuration files
-- `Test_Problems/`: Test cases and example problems
-- `Tools/`: Utility tools
-- `Doc/`: Documentation
+Andrea Mignone (mignone@to.infn.it),
+(Dipartimento di Fisica, Turin University)
+(INAF Osservatorio Astronomico di Torino)
 
-## Requirements
+# Contributors
 
-- Fortran 90 compiler
-- MPI implementation
-- OpenMP support
-- Python (for visualization and analysis)
+B. Vaidya
+C. Zanni
+P. Tzeferacos
+G. Muscianisi
+G. Bodo, T. Matsakos, O. Tesileanu,
 
-## Installation
+# System requirements
 
-Detailed installation instructions will be provided in the documentation.
+- C compiler (gcc works fine),
+- Python (v. 2.0 or higher)
 
-## Usage
+Optionals
 
-Please refer to the documentation in the `Doc/` directory for detailed usage instructions.
+- MPI (for parallel runs)
+- Chombo lib (for AMR)
+- libpng to produce on-the-fly graphics.
 
-## License
+# Basic Installation and Usage
 
-This project is licensed under the terms specified in the COPYING file.
+There's no configure.sh; once you've unpacked the distribution,
 
-## Contributing
+1. define the shell variable PLUTO_DIR as the
+   main PLUTO directory, e.g.,
+   if you are using tcsh:
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+   > setenv PLUTO_DIR "/home/user/PLUTO"
 
-## Author
+   if you're using bash:
 
-[Your Name] - Ph.D. student specializing in Solar Physics
+   > export PLUTO_DIR="/Users/ovidiu/PLUTO"
+
+2. select a working dir anywhere on your hard disk;
+   at the command prompt, just type
+
+   > python $PLUTO_DIR/setup.py
+
+   configure your problem and select makefile;
+
+3. edit your init.c and pluto.ini to assign
+   initial conditions and problem specific information;
+
+4. compile with
+
+   > make
+
+   or (gmake);
+
+5. run with
+
+   > ./pluto
+
+See the documentation in Doc/ for more information.
+Have fun!
