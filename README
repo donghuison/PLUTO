@@ -1,6 +1,6 @@
                         PLUTO version 4.4-patch1
                      ------------------------
-                 Copyright (C) 2002-2021 Andrea Mignone 
+                 Copyright (C) 2002-2021 Andrea Mignone
 
 PLUTO is Godunov-type code for astrophysical fluid dynamics supporting several
 modules and algorithms. This is the v 4.3 (June 2018) version of the code
@@ -12,47 +12,41 @@ the Free Software Foundation.
 
 This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
+# Main Developer
 
-Main Developer
-==============
-     
-  Andrea Mignone (mignone@to.infn.it), 
- (Dipartimento di Fisica, Turin University)
- (INAF Osservatorio Astronomico di Torino)
+Andrea Mignone (mignone@to.infn.it),
+(Dipartimento di Fisica, Turin University)
+(INAF Osservatorio Astronomico di Torino)
 
+# Contributors
 
-Contributors
-============
-    
-  B. Vaidya 
-  C. Zanni
-  P. Tzeferacos 
-  G. Muscianisi
-  G. Bodo, T. Matsakos, O. Tesileanu,  
+B. Vaidya
+C. Zanni
+P. Tzeferacos
+G. Muscianisi
+G. Bodo, T. Matsakos, O. Tesileanu,
 
 System requirements
-=================== 
+===================
 
- - C compiler (gcc works fine),
- - Python (v. 2.0 or higher)
+- C compiler (gcc works fine),
+- Python (v. 2.0 or higher)
 
- Optionals
+Optionals
 
- - MPI (for parallel runs)
- - Chombo lib (for AMR)
- - libpng to produce on-the-fly graphics.
- 
+- MPI (for parallel runs)
+- Chombo lib (for AMR)
+- libpng to produce on-the-fly graphics.
 
-Basic Installation and Usage
-============================
+# Basic Installation and Usage
 
-There's no configure.sh; once you've unpacked the distribution,  
+There's no configure.sh; once you've unpacked the distribution,
 
-1) define the shell variable PLUTO_DIR as the 
-   main PLUTO directory, e.g., 
+1. define the shell variable PLUTO_DIR as the
+   main PLUTO directory, e.g.,
    if you are using tcsh:
 
    > setenv PLUTO_DIR "/home/user/PLUTO"
@@ -61,27 +55,25 @@ There's no configure.sh; once you've unpacked the distribution,
 
    > export PLUTO_DIR="/Users/ovidiu/PLUTO"
 
+2. select a working dir anywhere on your hard disk;
+   at the command prompt, just type
 
-2) select a working dir anywhere on your hard disk;
-   at the command prompt, just type 
-
-   > python $PLUTO_DIR/setup.py 
+   > python $PLUTO_DIR/setup.py
 
    configure your problem and select makefile;
 
-3) edit your init.c and pluto.ini to assign 
+3. edit your init.c and pluto.ini to assign
    initial conditions and problem specific information;
 
-4) compile with
+4. compile with
 
-   > make 
+   > make
 
    or (gmake);
 
-4) run with 
+5. run with
 
    > ./pluto
 
 See the documentation in Doc/ for more information.
 Have fun!
-  
